@@ -1,101 +1,76 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-      MaterialApp(
-        home: Scaffold(
-          backgroundColor: Colors.indigo,
-          body: SafeArea(
-            // child: Column(
-            //   // mainAxisSize: MainAxisSize.min,
-            //   // mainAxisAlignment: MainAxisAlignment.end,
-            //   // mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //
-            //   children: [
-            //     Container(
-            //       height: 100,
-            //       width: 120,
-            //       margin: EdgeInsets.all(20),
-            //       // margin: EdgeInsets.only(left: 30),
-            //       // margin: EdgeInsets.fromLTRB(10,20,30,40),
-            //       padding: EdgeInsets.all(10),
-            //       // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-            //       child: Text("Container1"),
-            //       color: Colors.green,
-            //
-            //     ),
-            //     Container(
-            //       height: 100,
-            //       width: 100,
-            //       margin: EdgeInsets.all(20),
-            //       // margin: EdgeInsets.only(left: 30),
-            //       // margin: EdgeInsets.fromLTRB(10,20,30,40),
-            //       padding: EdgeInsets.all(10),
-            //       // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-            //       child: Text("Container2"),
-            //       color: Colors.green,
-            //
-            //     ),
-            //     Container(
-            //       height: 100,
-            //       width: 100,
-            //       margin: EdgeInsets.all(20),
-            //       // margin: EdgeInsets.only(left: 30),
-            //       // margin: EdgeInsets.fromLTRB(10,20,30,40),
-            //       padding: EdgeInsets.all(10),
-            //       child: Text("Container3"),
-            //       color: Colors.green,
-            //
-            //     ),
-            //   ],
-            // ),
-            child: Row(
-              // mainAxisSize: MainAxisSize.min,
-              // mainAxisAlignment: MainAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              // crossAxisAlignment: CrossAxisAlignment.,
-
-              children: [
-                Container(
-                  height: 100,
-                  width: 80,
-                  margin: EdgeInsets.all(20),
-                  // margin: EdgeInsets.only(left: 30),
-                  // margin: EdgeInsets.fromLTRB(10,20,30,40),
-                  padding: EdgeInsets.all(10),
-                  // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-                  child: Text("Container1"),
-                  color: Colors.green,
-
-                ),
-                Container(
-                  height: 100,
-                  width: 80,
-                  margin: EdgeInsets.all(20),
-                  // margin: EdgeInsets.only(left: 30),
-                  // margin: EdgeInsets.fromLTRB(10,20,30,40),
-                  padding: EdgeInsets.all(10),
-                  // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-                  child: Text("Container2"),
-                  color: Colors.green,
-
-                ),
-                Container(
-                  height: 100,
-                  width: 80,
-                  margin: EdgeInsets.all(20),
-                  // margin: EdgeInsets.only(left: 30),
-                  // margin: EdgeInsets.fromLTRB(10,20,30,40),
-                  padding: EdgeInsets.all(10),
-                  child: Text("Container3"),
-                  color: Colors.green,
-
-                ),
-              ],
-            ),
+  runApp(MaterialApp(
+      home: Scaffold(
+    backgroundColor: Colors.teal,
+    body: SafeArea(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            backgroundImage: AssetImage("images/NB_logo.jpeg"),
+            radius: 60,
           ),
-        )
-      )
-  );
+          Text(
+            "Nozimjon Bozorov",
+            style: TextStyle(
+                color: Colors.white, fontFamily: "Pacifico", fontSize: 30),
+          ),
+          Text(
+            "Flutter Developer",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          SizedBox(
+              height: 20,
+              width: 140,
+              child: Divider(
+                color: Colors.tealAccent,
+              )),
+          Card(
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Text(
+                      "+998 97 827 07 92",
+                      style: TextStyle(color: Colors.teal, fontSize: 18),
+                    )
+                  ],
+                ),
+              )),
+          Card(
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Text(
+                      "nozimbek6603@gmail.com",
+                      style: TextStyle(color: Colors.teal, fontSize: 20),
+                    )
+                  ],
+                ),
+              ))
+        ],
+      ),
+    ),
+  )));
 }
