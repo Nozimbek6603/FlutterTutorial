@@ -1,4 +1,4 @@
-# flutter_zayniddin_darslari
+# flutter_darslari
 
 A new Flutter project.
 
