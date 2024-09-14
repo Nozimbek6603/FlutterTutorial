@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -55,8 +57,15 @@ class DiceApp extends StatefulWidget {
 }
 
 class _DiceAppState extends State<DiceApp> {
-  var leftImageNumber = 3;
-  var rightImageNumber = 1;
+  int leftImageNumber = 3;
+  int rightImageNumber = 1;
+
+  void change_dice() {
+    setState(() {
+      leftImageNumber = Random().nextInt(5)+1;
+      rightImageNumber = Random().nextInt(5)+1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,10 +74,7 @@ class _DiceAppState extends State<DiceApp> {
       Expanded(
           child: TextButton(
         onPressed: () {
-          setState(() {
-            leftImageNumber++;
-          });
-
+          change_dice();
           print("left Button");
         },
         child: Padding(
@@ -77,18 +83,16 @@ class _DiceAppState extends State<DiceApp> {
         ),
       )),
       Expanded(
-          child: TextButton(
-            onPressed: () {
-            setState(() {
-              rightImageNumber = 3;
-            });
-          print("right button");
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Image.asset('images/dice2.png'),
+        child: TextButton(
+          onPressed: () {
+            change_dice();
+            print("right button");
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Image.asset('images/dice$rightImageNumber.png'),
+          ),
         ),
-      ),
       ),
     ]));
   }
