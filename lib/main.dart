@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 
 
 void main(){
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+
+
   runApp(MyApp());
 }
 
@@ -26,12 +32,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final isorientation = MediaQuery.of(context).orientation==Orientation.portrait;
 
 
     return Scaffold(
       appBar: AppBar(
         title: Text("App"),),
-      body: Container(
+      body: isorientation ? Container(
         child: Column(
           children: [
             Container(
@@ -46,7 +53,21 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      )
+      :Container(
+        child: Row(
+          children: [
+            Container(
+              width: size.height*0.2,
+              color: Colors.red,
+            ),
+            Container(
+              width: size.height*0.5,
+              color: Colors.blue,
+            ),
+          ],
+        ),
+      )
     );
   }
 }
