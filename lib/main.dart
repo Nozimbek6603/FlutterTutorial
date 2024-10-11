@@ -36,6 +36,7 @@ class HomePage extends StatelessWidget {
 
 
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         title: Text("App"),),
       body: isorientation ? Container(
@@ -60,9 +61,12 @@ class HomePage extends StatelessWidget {
             Container(
               width: size.height*0.2,
               color: Colors.red,
+              margin: EdgeInsets.all(20),
             ),
             Container(
               width: size.height*0.5,
+              margin: EdgeInsets.all(20),
+
               color: Colors.blue,
             ),
           ],
