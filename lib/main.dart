@@ -16,39 +16,6 @@ void main() {
   ));
 }
 
-// class DiceApp extends StatelessWidget {
-//
-//   var leftImageNumber = 3;
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//         child: Row(children: [
-//       Expanded(child: FilledButton(
-//         onPressed: (){
-//           print("left Button");
-//         },
-//         child: Padding(
-//           padding: const EdgeInsets.all(12.0),
-//           child: Image.asset('images/dice$leftImageNumber.png'),
-//         ),
-//       )),
-//       Expanded(child: FilledButton(
-//         onPressed: (){
-//           print("right button");
-//         },
-//         child: Padding(
-//           padding: const EdgeInsets.all(12.0),
-//           child: Image.asset('images/dice2.png'),
-//         ),
-//       )),
-//     ]
-//     )
-//     );
-//   }
-// }
-
 class DiceApp extends StatefulWidget {
   const DiceApp({super.key});
 
@@ -62,8 +29,8 @@ class _DiceAppState extends State<DiceApp> {
 
   void change_dice() {
     setState(() {
-      leftImageNumber = Random().nextInt(5)+1;
-      rightImageNumber = Random().nextInt(5)+1;
+      leftImageNumber = Random().nextInt(5) + 1;
+      rightImageNumber = Random().nextInt(5) + 1;
     });
   }
 
